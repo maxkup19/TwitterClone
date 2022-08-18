@@ -78,6 +78,9 @@ struct TweetRowView: View {
                 }
             }
             .padding()
+            .foregroundColor(.secondary)
+            
+            Divider()
         }
         .padding()
     }
