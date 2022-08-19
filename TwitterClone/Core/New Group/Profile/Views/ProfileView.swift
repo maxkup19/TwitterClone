@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State private var selectedFilter: TweetFilterViewModel = .tweets
+    @Namespace var animation
+    
     var body: some View {
         VStack(alignment: .leading) {
             headerView
@@ -15,6 +19,10 @@ struct ProfileView: View {
             actionButtons
             
             userInfoDetails
+            
+            tweetFilterBar
+            
+            tweetsView
             
             Spacer()
         }
@@ -135,5 +143,47 @@ extension ProfileView {
             .padding(.vertical)
         }
         .padding(.horizontal)
+    }
+    
+    private var tweetFilterBar: some View {
+        HStack {
+            ForEach(TweetFilterViewModel.allCases, id:\.rawValue) { item in
+                VStack {
+                    Text(item.title)
+                        .font(.subheadline)
+                        .fontWeight(selectedFilter == item ? .semibold : .bold)
+                        .foregroundColor(selectedFilter == item ? .primary : .secondary)
+                    
+                    if selectedFilter == item {
+                        Capsule()
+                            .foregroundColor(Color(.systemBlue))
+                            .frame(height: 3)
+                            .matchedGeometryEffect(id: "filter", in: animation)
+                            
+                    } else {
+                        Capsule()
+                            .foregroundColor(.clear)
+                            .frame(height: 3)
+                    }
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut) {
+                        self.selectedFilter = item
+                    }
+                }
+            }
+        }
+        .overlay(Divider().offset(x: 0, y: 16))
+    }
+    
+    private var tweetsView: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(0...9, id:\.self) { _ in
+                    TweetRowView()
+                        .padding()
+                }
+            }
+        }
     }
 }
