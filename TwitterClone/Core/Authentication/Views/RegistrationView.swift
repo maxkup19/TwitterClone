@@ -8,8 +8,64 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    
+    @State private var email = ""
+    @State private var username = ""
+    @State private var fullname = ""
+    @State private var password = ""
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            AuthHeaderView(title1: "Get started.",
+                           title2: "Create your account")
+            
+            VStack(spacing: 40) {
+                CustomInputField(imageName: "envelope",
+                                 placeholder: "Email",
+                                 text: $email)
+                CustomInputField(imageName: "person",
+                                 placeholder: "Username",
+                                 text: $username)
+                CustomInputField(imageName: "person",
+                                 placeholder: "Fullname",
+                                 text: $fullname)
+                CustomInputField(imageName: "lock",
+                                 placeholder: "Password",
+                                 text: $password)
+            }
+            .padding(32)
+
+            Button {
+                print("sign up here")
+            } label: {
+                Text("Sign uo")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(width: 340, height: 50)
+                    .background(Color.blue)
+                    .clipShape(Capsule())
+                    .padding()
+            }
+            .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+            
+            Spacer()
+            
+            Button {
+                dismiss()
+            } label: {
+                HStack {
+                    Text("Already have an account?")
+                        .font(.footnote)
+                    
+                    Text("Sign In")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                }
+            }
+            .padding(.bottom, 32)
+        }
+        .ignoresSafeArea()
     }
 }
 
