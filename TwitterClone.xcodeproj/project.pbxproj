@@ -19,7 +19,8 @@
 		0A389E3528B2BA9400134655 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0A389E3428B2BA9400134655 /* FirebaseFirestore */; };
 		0A389E3728B2BA9400134655 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A389E3628B2BA9400134655 /* FirebaseFirestoreSwift */; };
 		0A389E3928B2BA9400134655 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A389E3828B2BA9400134655 /* FirebaseStorage */; };
-		0A389E4028B2C9C800134655 /* GoogleService-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A389E3F28B2C9C800134655 /* GoogleService-info.plist */; };
+		0A389E4228B2CA8E00134655 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389E4128B2CA8E00134655 /* AuthViewModel.swift */; };
+		0A389E4428B2CAE700134655 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A389E4328B2CAE700134655 /* GoogleService-Info.plist */; };
 		0AB19F4028AEEA4200B3B232 /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F3F28AEEA4200B3B232 /* TwitterCloneApp.swift */; };
 		0AB19F4228AEEA4200B3B232 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F4128AEEA4200B3B232 /* ContentView.swift */; };
 		0AB19F4428AEEA4500B3B232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB19F4328AEEA4500B3B232 /* Assets.xcassets */; };
@@ -47,7 +48,8 @@
 		0A389E2828B286B800134655 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		0A389E2A28B28A6C00134655 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		0A389E2D28B2B50A00134655 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
-		0A389E3F28B2C9C800134655 /* GoogleService-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-info.plist"; sourceTree = "<group>"; };
+		0A389E4128B2CA8E00134655 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0A389E4328B2CAE700134655 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AB19F3C28AEEA4200B3B232 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB19F3F28AEEA4200B3B232 /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		0AB19F4128AEEA4200B3B232 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		0A389E3E28B2C94400134655 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0A389E4128B2CA8E00134655 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,8 +168,8 @@
 				0AB19F3F28AEEA4200B3B232 /* TwitterCloneApp.swift */,
 				0AB19F4128AEEA4200B3B232 /* ContentView.swift */,
 				0AB19F4328AEEA4500B3B232 /* Assets.xcassets */,
+				0A389E4328B2CAE700134655 /* GoogleService-Info.plist */,
 				0AB19F4528AEEA4500B3B232 /* Preview Content */,
-				0A389E3F28B2C9C800134655 /* GoogleService-info.plist */,
 			);
 			path = TwitterClone;
 			sourceTree = "<group>";
@@ -439,9 +442,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A389E4028B2C9C800134655 /* GoogleService-info.plist in Resources */,
 				0AB19F4728AEEA4500B3B232 /* Preview Assets.xcassets in Resources */,
 				0AB19F4428AEEA4500B3B232 /* Assets.xcassets in Resources */,
+				0A389E4428B2CAE700134655 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +472,7 @@
 				0A389E2528B284A700134655 /* LoginView.swift in Sources */,
 				0A389E2728B284B900134655 /* RegistrationView.swift in Sources */,
 				0A389E1E28B27FC600134655 /* NewTweetView.swift in Sources */,
+				0A389E4228B2CA8E00134655 /* AuthViewModel.swift in Sources */,
 				0A389E2928B286B800134655 /* RoundedShape.swift in Sources */,
 				0A389E1928B279D700134655 /* SideMenuOptionRowView.swift in Sources */,
 				0AB19F5D28AEEFCF00B3B232 /* MainTabView.swift in Sources */,
