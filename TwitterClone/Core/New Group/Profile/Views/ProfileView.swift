@@ -79,7 +79,7 @@ extension ProfileView {
                  Text("Edit Profile")
                     .font(.subheadline).bold()
                     .frame(width: 120, height: 32)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(.gray, lineWidth: 0.75))
             }
         }
