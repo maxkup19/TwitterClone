@@ -21,8 +21,8 @@ struct TwitterCloneApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
-                    .environmentObject(avm)
             }
+            .environmentObject(avm)
         }
     }
 }

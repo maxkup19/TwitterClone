@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var avm: AuthViewModel
     
     var body: some View {
         // parent container
@@ -46,7 +47,8 @@ struct LoginView: View {
             }
             
             Button {
-                print("sign in here")
+                avm.login(withEmail: email,
+                          password: password)
             } label: {
                 Text("Sign in")
                     .font(.headline)
@@ -84,5 +86,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(AuthViewModel())
     }
 }

@@ -14,6 +14,7 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var password = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var avm: AuthViewModel
     
     var body: some View {
         VStack {
@@ -37,7 +38,10 @@ struct RegistrationView: View {
             .padding(32)
 
             Button {
-                print("sign up here")
+                avm.register(withEmail: email,
+                             password: password,
+                             fullname: fullname,
+                             username: username)
             } label: {
                 Text("Sign uo")
                     .font(.headline)
@@ -72,5 +76,6 @@ struct RegistrationView: View {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
+            .environmentObject(AuthViewModel())
     }
 }
