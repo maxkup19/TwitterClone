@@ -33,6 +33,7 @@ struct RegistrationView: View {
                                  text: $fullname)
                 CustomInputField(imageName: "lock",
                                  placeholder: "Password",
+                                 isSecureField: true,
                                  text: $password)
             }
             .padding(32)
@@ -43,7 +44,7 @@ struct RegistrationView: View {
                              fullname: fullname,
                              username: username)
             } label: {
-                Text("Sign uo")
+                Text("Sign up")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
