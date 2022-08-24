@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2A42A428B63E890009AEF8 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A42A328B63E890009AEF8 /* ProfilePhotoSelectorView.swift */; };
 		0A389E1928B279D700134655 /* SideMenuOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389E1828B279D700134655 /* SideMenuOptionRowView.swift */; };
 		0A389E1E28B27FC600134655 /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389E1D28B27FC600134655 /* NewTweetView.swift */; };
 		0A389E2028B280F300134655 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389E1F28B280F300134655 /* TextArea.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2A42A328B63E890009AEF8 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 		0A389E1828B279D700134655 /* SideMenuOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionRowView.swift; sourceTree = "<group>"; };
 		0A389E1D28B27FC600134655 /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		0A389E1F28B280F300134655 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				0A389E2428B284A700134655 /* LoginView.swift */,
 				0A389E2628B284B900134655 /* RegistrationView.swift */,
+				0A2A42A328B63E890009AEF8 /* ProfilePhotoSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				0A389E2B28B28A6C00134655 /* CustomInputField.swift in Sources */,
 				0AB19F6E28AFA9D600B3B232 /* TweetFilterViewModel.swift in Sources */,
 				0AB19F5728AEEB2C00B3B232 /* FeedView.swift in Sources */,
+				0A2A42A428B63E890009AEF8 /* ProfilePhotoSelectorView.swift in Sources */,
 				0AB19F7828AFB1B100B3B232 /* SideMenuView.swift in Sources */,
 				0AB19F4028AEEA4200B3B232 /* TwitterCloneApp.swift in Sources */,
 				0AB19F6428AEF10800B3B232 /* ExploreView.swift in Sources */,
