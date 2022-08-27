@@ -12,48 +12,49 @@ struct SideMenuView: View {
     @EnvironmentObject var avm: AuthViewModel
     
     var body: some View {
-        
-        VStack(alignment: .leading, spacing: 32) {
-            VStack(alignment: .leading) {
-                Circle()
-                    .frame(width: 48, height: 48)
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Bruce Wayne")
-                        .font(.headline)
+        if let user = avm.currentUser {
+            VStack(alignment: .leading, spacing: 32) {
+                VStack(alignment: .leading) {
+                    Circle()
+                        .frame(width: 48, height: 48)
                     
-                    Text("@batman")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(user.fullname)
+                            .font(.headline)
+                        
+                        Text("@\(user.username)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    UserStatsView()
+                        .padding(.vertical)
+                    
                 }
+                .padding(.leading)
                 
-                UserStatsView()
-                    .padding(.vertical)
-                
-            }
-            .padding(.leading)
-            
-            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { option in
-                
-                if option == .profile {
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
+                ForEach(SideMenuViewModel.allCases, id: \.rawValue) { option in
+                    
+                    if option == .profile {
+                        NavigationLink {
+                            ProfileView()
+                        } label: {
+                            SideMenuOptionRowView(viewModel: option)
+                        }
+                    } else if option == .logout {
+                        Button {
+                            avm.signOut()
+                        } label: {
+                            SideMenuOptionRowView(viewModel: option)
+                        }
+                    } else  {
                         SideMenuOptionRowView(viewModel: option)
                     }
-                } else if option == .logout {
-                    Button {
-                        avm.signOut()
-                    } label: {
-                        SideMenuOptionRowView(viewModel: option)
-                    }
-                } else  {
-                    SideMenuOptionRowView(viewModel: option)
+                    
+                    
                 }
-                
-                
+                Spacer()
             }
-            Spacer()
         }
     }
 }

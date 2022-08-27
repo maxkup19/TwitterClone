@@ -40,6 +40,8 @@
 		0AEBD1A228BA820F00E02377 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A128BA820F00E02377 /* ImagePicker.swift */; };
 		0AEBD1A428BA860700E02377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A328BA860700E02377 /* GoogleService-Info.plist */; };
 		0AEBD1A628BA8ACF00E02377 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */; };
+		0AEBD1A828BAD68D00E02377 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A728BAD68D00E02377 /* UserService.swift */; };
+		0AEBD1AA28BAD90F00E02377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A928BAD90F00E02377 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		0AEBD1A128BA820F00E02377 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AEBD1A328BA860700E02377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		0AEBD1A728BAD68D00E02377 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		0AEBD1A928BAD90F00E02377 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */,
+				0AEBD1A728BAD68D00E02377 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 		0AB19F5028AEEA7600B3B232 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0AEBD1A928BAD90F00E02377 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 			files = (
 				0AB19F6828AEF14000B3B232 /* MessagesView.swift in Sources */,
 				0AB19F6C28AEF27E00B3B232 /* ProfileView.swift in Sources */,
+				0AEBD1A828BAD68D00E02377 /* UserService.swift in Sources */,
 				0AEBD1A228BA820F00E02377 /* ImagePicker.swift in Sources */,
 				0AB19F4228AEEA4200B3B232 /* ContentView.swift in Sources */,
 				0A389E2E28B2B50A00134655 /* AuthHeaderView.swift in Sources */,
@@ -491,6 +498,7 @@
 				0AB19F7328AFAF1E00B3B232 /* UserRowView.swift in Sources */,
 				0A389E2528B284A700134655 /* LoginView.swift in Sources */,
 				0A389E2728B284B900134655 /* RegistrationView.swift in Sources */,
+				0AEBD1AA28BAD90F00E02377 /* User.swift in Sources */,
 				0A389E1E28B27FC600134655 /* NewTweetView.swift in Sources */,
 				0A389E4228B2CA8E00134655 /* AuthViewModel.swift in Sources */,
 				0A389E2928B286B800134655 /* RoundedShape.swift in Sources */,
