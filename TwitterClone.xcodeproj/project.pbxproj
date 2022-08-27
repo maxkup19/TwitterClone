@@ -39,6 +39,7 @@
 		0AB19F7F28AFB36700B3B232 /* UserStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F7E28AFB36700B3B232 /* UserStatsView.swift */; };
 		0AEBD1A228BA820F00E02377 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A128BA820F00E02377 /* ImagePicker.swift */; };
 		0AEBD1A428BA860700E02377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A328BA860700E02377 /* GoogleService-Info.plist */; };
+		0AEBD1A628BA8ACF00E02377 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		0AB19F7E28AFB36700B3B232 /* UserStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsView.swift; sourceTree = "<group>"; };
 		0AEBD1A128BA820F00E02377 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AEBD1A328BA860700E02377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		0AB19F4E28AEEA6800B3B232 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -299,8 +302,8 @@
 		0AB19F6128AEF0B100B3B232 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				0AB19F6A28AEF27200B3B232 /* Views */,
 				0AB19F6928AEF26B00B3B232 /* ViewModels */,
+				0AB19F6A28AEF27200B3B232 /* Views */,
 			);
 			name = Profile;
 			path = "New Group/Profile";
@@ -474,6 +477,7 @@
 				0AEBD1A228BA820F00E02377 /* ImagePicker.swift in Sources */,
 				0AB19F4228AEEA4200B3B232 /* ContentView.swift in Sources */,
 				0A389E2E28B2B50A00134655 /* AuthHeaderView.swift in Sources */,
+				0AEBD1A628BA8ACF00E02377 /* ImageUploader.swift in Sources */,
 				0AB19F5A28AEEBD600B3B232 /* TweetRowView.swift in Sources */,
 				0A389E2B28B28A6C00134655 /* CustomInputField.swift in Sources */,
 				0AB19F6E28AFA9D600B3B232 /* TweetFilterViewModel.swift in Sources */,

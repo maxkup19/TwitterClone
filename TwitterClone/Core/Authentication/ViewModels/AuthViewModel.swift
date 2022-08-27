@@ -11,11 +11,12 @@ import Firebase
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var didAuthenticateUser = false
+    private var tempUserSession: FirebaseAuth.User?
     
     init() {
         self.userSession = Auth.auth().currentUser
         
-        print("DEBUG: current user is \(self.userSession?.uid)")
+        print("DEBUG: current user is \(String(describing: self.userSession?.uid))")
     }
     
     func login(withEmail email: String, password: String) {
@@ -28,7 +29,7 @@ class AuthViewModel: ObservableObject {
             guard let user = result?.user else { return }
             self.userSession = user
             
-            print("DEBUG: Did log user in")
+            print("DEBUG: did log user in")
         }
     }
     
@@ -40,9 +41,10 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
+            self.tempUserSession = user
             
-            print("DEBUG: Registered user succesfully")
-            print("DEBUG: User is \(user.uid)")
+            print("DEBUG: registered user succesfully")
+            print("DEBUG: user is \(user.uid)")
             
             let data = ["email" : email.lowercased(),
                         "username" : username.lowercased(),
@@ -66,5 +68,17 @@ class AuthViewModel: ObservableObject {
         try? Auth.auth().signOut()
         
         print("DEBUG: did sign user out")
+    }
+    
+    func uploadProfileImage(_ image: UIImage) {
+        guard let uid = tempUserSession?.uid else { return }
+        
+        ImageUploader.uploadImage(image: image) { profileImageUrl in
+            Firestore.firestore().collection("users")
+                .document(uid)
+                .updateData(["profileImageUrl" : profileImageUrl]) { _ in
+                    self.userSession = self.tempUserSession
+                }
+        }
     }
 }

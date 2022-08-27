@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
     
-    @Binding var selectedImage: UIImage
+    @Binding var selectedImage: UIImage?
     @Environment(\.dismiss) var dismiss
     
     func makeCoordinator() -> Coordinator {
