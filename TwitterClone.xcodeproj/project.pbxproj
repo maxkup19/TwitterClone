@@ -21,7 +21,6 @@
 		0A389E3728B2BA9400134655 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A389E3628B2BA9400134655 /* FirebaseFirestoreSwift */; };
 		0A389E3928B2BA9400134655 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A389E3828B2BA9400134655 /* FirebaseStorage */; };
 		0A389E4228B2CA8E00134655 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A389E4128B2CA8E00134655 /* AuthViewModel.swift */; };
-		0A389E4428B2CAE700134655 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A389E4328B2CAE700134655 /* GoogleService-Info.plist */; };
 		0AB19F4028AEEA4200B3B232 /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F3F28AEEA4200B3B232 /* TwitterCloneApp.swift */; };
 		0AB19F4228AEEA4200B3B232 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F4128AEEA4200B3B232 /* ContentView.swift */; };
 		0AB19F4428AEEA4500B3B232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB19F4328AEEA4500B3B232 /* Assets.xcassets */; };
@@ -38,6 +37,8 @@
 		0AB19F7828AFB1B100B3B232 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F7728AFB1B100B3B232 /* SideMenuView.swift */; };
 		0AB19F7C28AFB1D800B3B232 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F7B28AFB1D800B3B232 /* SideMenuViewModel.swift */; };
 		0AB19F7F28AFB36700B3B232 /* UserStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB19F7E28AFB36700B3B232 /* UserStatsView.swift */; };
+		0AEBD19F28BA810400E02377 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AEBD19E28BA810400E02377 /* GoogleService-Info.plist */; };
+		0AEBD1A228BA820F00E02377 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A128BA820F00E02377 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +52,6 @@
 		0A389E2A28B28A6C00134655 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		0A389E2D28B2B50A00134655 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		0A389E4128B2CA8E00134655 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		0A389E4328B2CAE700134655 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AB19F3C28AEEA4200B3B232 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB19F3F28AEEA4200B3B232 /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		0AB19F4128AEEA4200B3B232 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		0AB19F7728AFB1B100B3B232 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		0AB19F7B28AFB1D800B3B232 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		0AB19F7E28AFB36700B3B232 /* UserStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsView.swift; sourceTree = "<group>"; };
+		0AEBD19E28BA810400E02377 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0AEBD1A128BA820F00E02377 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,14 +166,15 @@
 		0AB19F3E28AEEA4200B3B232 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				0AEBD1A028BA820100E02377 /* Utils */,
 				0AB19F5128AEEA7A00B3B232 /* Extensions */,
 				0AB19F5028AEEA7600B3B232 /* Model */,
 				0AB19F4E28AEEA6800B3B232 /* Services */,
 				0AB19F4D28AEEA6000B3B232 /* Core */,
 				0AB19F3F28AEEA4200B3B232 /* TwitterCloneApp.swift */,
 				0AB19F4128AEEA4200B3B232 /* ContentView.swift */,
+				0AEBD19E28BA810400E02377 /* GoogleService-Info.plist */,
 				0AB19F4328AEEA4500B3B232 /* Assets.xcassets */,
-				0A389E4328B2CAE700134655 /* GoogleService-Info.plist */,
 				0AB19F4528AEEA4500B3B232 /* Preview Content */,
 			);
 			path = TwitterClone;
@@ -378,6 +381,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0AEBD1A028BA820100E02377 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0AEBD1A128BA820F00E02377 /* ImagePicker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,7 +458,7 @@
 			files = (
 				0AB19F4728AEEA4500B3B232 /* Preview Assets.xcassets in Resources */,
 				0AB19F4428AEEA4500B3B232 /* Assets.xcassets in Resources */,
-				0A389E4428B2CAE700134655 /* GoogleService-Info.plist in Resources */,
+				0AEBD19F28BA810400E02377 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +471,7 @@
 			files = (
 				0AB19F6828AEF14000B3B232 /* MessagesView.swift in Sources */,
 				0AB19F6C28AEF27E00B3B232 /* ProfileView.swift in Sources */,
+				0AEBD1A228BA820F00E02377 /* ImagePicker.swift in Sources */,
 				0AB19F4228AEEA4200B3B232 /* ContentView.swift in Sources */,
 				0A389E2E28B2B50A00134655 /* AuthHeaderView.swift in Sources */,
 				0AB19F5A28AEEBD600B3B232 /* TweetRowView.swift in Sources */,
