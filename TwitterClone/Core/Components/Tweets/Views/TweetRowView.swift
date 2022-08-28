@@ -9,14 +9,16 @@ import SwiftUI
 import Kingfisher
 
 struct TweetRowView: View {
+    @ObservedObject var trvm: TweetRowViewModel
     
-    let tweet: Tweet
-    
+    init(tweet: Tweet) {
+        self.trvm = TweetRowViewModel(tweet: tweet)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
             
-            if let user = tweet.user {
+            if let user = trvm.tweet.user {
                 // profile image + user info + tweet
                 HStack (alignment: .top, spacing: 12) {
                     KFImage(URL(string: user.profileImageUrl))
@@ -43,47 +45,33 @@ struct TweetRowView: View {
                         }
                         
                         // tweet caption
-                        Text(tweet.caption)
+                        Text(trvm.tweet.caption)
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                     }
                 }
                 
-                // action buttnos
-                HStack {
+                // action buttons
+                HStack(spacing: 25) {
+                    
                     Button {
-                        // MARK: - Action
+                        trvm.tweet.didLike ?? false ? trvm.unlikeTweet() : trvm.likeTweet()
                     } label: {
-                        Image(systemName: "bubble.left")
+                        Image(systemName: trvm.tweet.didLike ?? false ? "heart.fill" : "heart")
                             .font(.subheadline)
+                            .foregroundColor(trvm.tweet.didLike ?? false ? .red : .secondary)
+                    }
+                    
+                    
+                    Button {
+                        trvm.tweet.didSave ?? false ? trvm.unsaveTweet() : trvm.saveTweet()
+                    } label: {
+                        Image(systemName: trvm.tweet.didSave ?? false ? "bookmark.fill" : "bookmark")
+                            .font(.subheadline)
+                            .foregroundColor(trvm.tweet.didSave ?? false ? .blue : .secondary)
                     }
                     
                     Spacer()
-                    
-                    Button {
-                        // MARK: - Action
-                    } label: {
-                        Image(systemName: "arrow.2.squarepath")
-                            .font(.subheadline)
-                    }
-                    
-                    Spacer()
-                    
-                    Button {
-                        // MARK: - Action
-                    } label: {
-                        Image(systemName: "heart")
-                            .font(.subheadline)
-                    }
-                    
-                    Spacer()
-                    
-                    Button {
-                        // MARK: - Action
-                    } label: {
-                        Image(systemName: "bookmark")
-                            .font(.subheadline)
-                    }
                 }
                 .padding()
                 .foregroundColor(.secondary)
@@ -97,6 +85,6 @@ struct TweetRowView: View {
 
 //struct TweetRowView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        TweetRowView()
+//        TweetRowView(tweet: Tweet(caption: "", timestamp: Timestamp(), uid: "", likes: 2))
 //    }
 //}

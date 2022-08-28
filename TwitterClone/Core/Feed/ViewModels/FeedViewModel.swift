@@ -20,6 +20,7 @@ class FeedViewModel: ObservableObject {
     func fetchTweets() {
         tweetService.fetchTweets { tweets in
             self.tweets = tweets
+            print("DEBUG: \(self.tweets)")
             
             for i in 0 ..< tweets.count {
                 let uid = tweets[i].uid

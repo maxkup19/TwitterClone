@@ -17,7 +17,6 @@ struct ProfileView: View {
     
     init(user: User) {
         self.pvm = ProfileViewModel(user: user)
-        
     }
     
     var body: some View {
@@ -91,7 +90,7 @@ extension ProfileView {
             Button {
                 // MARK: - Action
             } label: {
-                 Text("Edit Profile")
+                Text(pvm.actionButtonTitle)
                     .font(.subheadline).bold()
                     .frame(width: 120, height: 32)
                     .foregroundColor(.primary)
@@ -175,7 +174,7 @@ extension ProfileView {
     private var tweetsView: some View {
         ScrollView {
             LazyVStack {
-                ForEach(pvm.tweets) { tweet in
+                ForEach(pvm.tweets(forFilter: self.selectedFilter)) { tweet in
                     TweetRowView(tweet: tweet)
                         .padding()
                 }

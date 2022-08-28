@@ -11,7 +11,6 @@ import Kingfisher
 struct NewTweetView: View {
     
     @State private var caption = ""
-    @State private var showAlert = false
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var avm: AuthViewModel
     @ObservedObject var utvm = UploadTweetViewModel()
@@ -60,13 +59,8 @@ struct NewTweetView: View {
         .onReceive(utvm.$didUploadTweet) { success in
             if success {
                 dismiss()
-            } else  {
-                showAlert = true
             }
-            
         }
-        .alert("Uploading Error",
-               isPresented: $showAlert, actions: {})
     }
 }
 
