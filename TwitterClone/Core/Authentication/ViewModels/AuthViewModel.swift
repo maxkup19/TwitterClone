@@ -18,7 +18,6 @@ class AuthViewModel: ObservableObject {
     
     init() {
         self.userSession = Auth.auth().currentUser
-        print("DEBUG: current user is \(String(describing: self.userSession?.uid))")
         self.fetchUser()
     }
     
@@ -32,8 +31,6 @@ class AuthViewModel: ObservableObject {
             guard let user = result?.user else { return }
             self.userSession = user
             self.fetchUser()
-            
-            print("DEBUG: did log user in")
         }
     }
     
@@ -47,9 +44,6 @@ class AuthViewModel: ObservableObject {
             guard let user = result?.user else { return }
             self.tempUserSession = user
             
-            print("DEBUG: registered user succesfully")
-            print("DEBUG: user is \(user.uid)")
-            
             let data = ["email" : email.lowercased(),
                         "username" : username.lowercased(),
                         "fullname" : fullname,
@@ -59,7 +53,6 @@ class AuthViewModel: ObservableObject {
                 .document(user.uid)
                 .setData(data) { _ in
                     self.didAuthenticateUser = true
-                    print("DEBUG: did upload user data")
                 }
         }
     }
@@ -70,8 +63,6 @@ class AuthViewModel: ObservableObject {
         
         // signs user out on server
         try? Auth.auth().signOut()
-        
-        print("DEBUG: did sign user out")
     }
     
     func uploadProfileImage(_ image: UIImage) {
@@ -90,7 +81,6 @@ class AuthViewModel: ObservableObject {
     func fetchUser() {
         guard let uid = self.userSession?.uid else { return }
         userService.fetchUser(withUid: uid) { user in
-            print("DEBUG: fetched user data: \(user)")
             self.currentUser = user
         }
     }
