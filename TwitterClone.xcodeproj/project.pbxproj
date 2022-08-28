@@ -44,6 +44,7 @@
 		0AEBD1AA28BAD90F00E02377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1A928BAD90F00E02377 /* User.swift */; };
 		0AEBD1AD28BBB60200E02377 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0AEBD1AC28BBB60200E02377 /* Kingfisher */; };
 		0AEBD1AF28BBBFF600E02377 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1AE28BBBFF600E02377 /* ExploreViewModel.swift */; };
+		0AEBD1B128BBC39000E02377 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1B028BBC39000E02377 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		0AEBD1A728BAD68D00E02377 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		0AEBD1A928BAD90F00E02377 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0AEBD1AE28BBBFF600E02377 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		0AEBD1B028BBC39000E02377 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				0A389E1F28B280F300134655 /* TextArea.swift */,
 				0A389E2828B286B800134655 /* RoundedShape.swift */,
 				0A389E2A28B28A6C00134655 /* CustomInputField.swift */,
+				0AEBD1B028BBC39000E02377 /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				0AB19F4028AEEA4200B3B232 /* TwitterCloneApp.swift in Sources */,
 				0AB19F6428AEF10800B3B232 /* ExploreView.swift in Sources */,
 				0AB19F7C28AFB1D800B3B232 /* SideMenuViewModel.swift in Sources */,
+				0AEBD1B128BBC39000E02377 /* SearchBar.swift in Sources */,
 				0A389E2028B280F300134655 /* TextArea.swift in Sources */,
 				0AB19F7328AFAF1E00B3B232 /* UserRowView.swift in Sources */,
 				0A389E2528B284A700134655 /* LoginView.swift in Sources */,
