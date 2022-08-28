@@ -45,6 +45,8 @@
 		0AEBD1AD28BBB60200E02377 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0AEBD1AC28BBB60200E02377 /* Kingfisher */; };
 		0AEBD1AF28BBBFF600E02377 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1AE28BBBFF600E02377 /* ExploreViewModel.swift */; };
 		0AEBD1B128BBC39000E02377 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1B028BBC39000E02377 /* SearchBar.swift */; };
+		0AEBD1B328BBC75C00E02377 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1B228BBC75C00E02377 /* TweetService.swift */; };
+		0AEBD1B528BBC8BC00E02377 /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBD1B428BBC8BB00E02377 /* UploadTweetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		0AEBD1A928BAD90F00E02377 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0AEBD1AE28BBBFF600E02377 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		0AEBD1B028BBC39000E02377 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		0AEBD1B228BBC75C00E02377 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
+		0AEBD1B428BBC8BB00E02377 /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		0A389E1B28B27FAD00134655 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0AEBD1B428BBC8BB00E02377 /* UploadTweetViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				0AEBD1A528BA8ACF00E02377 /* ImageUploader.swift */,
 				0AEBD1A728BAD68D00E02377 /* UserService.swift */,
+				0AEBD1B228BBC75C00E02377 /* TweetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -503,6 +509,8 @@
 				0AEBD1AF28BBBFF600E02377 /* ExploreViewModel.swift in Sources */,
 				0AB19F7828AFB1B100B3B232 /* SideMenuView.swift in Sources */,
 				0AB19F4028AEEA4200B3B232 /* TwitterCloneApp.swift in Sources */,
+				0AEBD1B528BBC8BC00E02377 /* UploadTweetViewModel.swift in Sources */,
+				0AEBD1B328BBC75C00E02377 /* TweetService.swift in Sources */,
 				0AB19F6428AEF10800B3B232 /* ExploreView.swift in Sources */,
 				0AB19F7C28AFB1D800B3B232 /* SideMenuViewModel.swift in Sources */,
 				0AEBD1B128BBC39000E02377 /* SearchBar.swift in Sources */,
