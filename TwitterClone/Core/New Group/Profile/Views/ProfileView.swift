@@ -176,7 +176,8 @@ extension ProfileView {
             LazyVStack {
                 ForEach(pvm.tweets(forFilter: self.selectedFilter)) { tweet in
                     TweetRowView(tweet: tweet)
-                        .padding()
+                        .padding(.vertical, 5)
+                        .padding(.horizontal)
                 }
             }
         }

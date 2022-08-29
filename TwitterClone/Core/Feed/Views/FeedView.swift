@@ -18,6 +18,8 @@ struct FeedView: View {
                 LazyVStack {
                     ForEach(fvm.tweets) { tweet in
                         TweetRowView(tweet: tweet)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal)
                     }
                 }
             }

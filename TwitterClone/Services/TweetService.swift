@@ -38,7 +38,7 @@ struct TweetService {
                 guard let documents = snapshot?.documents else { return }
                 
                 let tweets = documents.compactMap({ try? $0.data(as: Tweet.self) })
-                print(tweets)
+                print("DEBUG: did fetch tweets succefully")
                 completion(tweets)
             }
     }
@@ -49,7 +49,7 @@ struct TweetService {
             .getDocuments { snapshot, _ in
                 guard let documents = snapshot?.documents else { return }
                 
-                let tweets = documents.compactMap({ try? $0.data(as: Tweet.self) })
+                let tweets = documents.compactMap { try? $0.data(as: Tweet.self) }
                 completion(tweets.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() }))
             }
     }
@@ -70,6 +70,7 @@ extension TweetService {
             .updateData(["likes": tweet.likes + 1]) { _ in
                 userLikesRef.document(tweetId)
                     .setData([:]) { _ in
+                        print("DEBUG: did like tweet successfully")
                         completion()
                     }
             }
@@ -86,6 +87,7 @@ extension TweetService {
             .updateData(["likes": tweet.likes - 1]) { _ in
                 userLikesRef.document(tweetId)
                     .delete { _ in
+                        print("DEBUG: did unlike tweet successfully")
                         completion()
                     }
             }
@@ -156,7 +158,7 @@ extension TweetService {
     func unsaveTweet(_ tweet: Tweet, completion: @escaping() -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let tweetId = tweet.id else { return }
-        guard tweet.likes > 0 else { return }
+        guard tweet.saved > 0 else { return }
         
         let userLikesRef = Firestore.firestore().collection("users").document(uid).collection("user-saved")
         

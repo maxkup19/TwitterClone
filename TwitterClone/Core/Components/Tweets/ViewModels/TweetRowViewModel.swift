@@ -20,9 +20,7 @@ class TweetRowViewModel: ObservableObject {
     
     func likeTweet() {
         service.likeTweet(self.tweet) {
-            withAnimation(.easeInOut) {
-                self.tweet.didLike = true
-            }
+            self.tweet.didLike = true
         }
     }
     
@@ -42,9 +40,7 @@ class TweetRowViewModel: ObservableObject {
     
     func saveTweet() {
         service.saveTweet(self.tweet) {
-            withAnimation(.easeInOut) {
-                self.tweet.didSave = true
-            }
+            self.tweet.didSave = true
         }
     }
     

@@ -18,9 +18,9 @@ class ProfileViewModel: ObservableObject {
     
     init(user: User) {
         self.user = user
-        fetchUserTweets()
-        fetchLikedTweets()
-        fetchSavedTweets()
+        self.fetchUserTweets()
+        self.fetchLikedTweets()
+        self.fetchSavedTweets()
     }
     
     var actionButtonTitle: String {
