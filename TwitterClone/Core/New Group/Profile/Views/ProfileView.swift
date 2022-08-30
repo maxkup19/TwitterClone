@@ -10,13 +10,14 @@ import Kingfisher
 
 struct ProfileView: View {
     
-    @State private var selectedFilter: TweetFilterViewModel = .tweets
+    @State private var selectedFilter: TweetFilterViewModel
     @ObservedObject var pvm: ProfileViewModel
     @Environment(\.dismiss) var dismiss
     @Namespace var animation
     
-    init(user: User) {
+    init(user: User, selectedFilter: TweetFilterViewModel = .tweets) {
         self.pvm = ProfileViewModel(user: user)
+        self._selectedFilter = State(initialValue: selectedFilter)
     }
     
     var body: some View {

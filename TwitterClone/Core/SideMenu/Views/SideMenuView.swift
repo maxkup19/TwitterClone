@@ -51,7 +51,13 @@ struct SideMenuView: View {
                         } label: {
                             SideMenuOptionRowView(viewModel: option)
                         }
-                    } else  {
+                    } else if option == .bookmarks {
+                        NavigationLink {
+                            ProfileView(user: user, selectedFilter: .saved)
+                        } label: {
+                            SideMenuOptionRowView(viewModel: option)
+                        }
+                    } else {
                         SideMenuOptionRowView(viewModel: option)
                     }
                     
