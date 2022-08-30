@@ -8,7 +8,7 @@
 import Firebase
 import FirebaseFirestoreSwift
 
-struct Tweet: Identifiable, Codable {
+struct Tweet: Identifiable, Codable, Hashable {
     @DocumentID var id: String?
     let caption: String
     let timestamp: Timestamp
@@ -19,4 +19,14 @@ struct Tweet: Identifiable, Codable {
     var user: User?
     var didLike: Bool? = false
     var didSave: Bool? = false
+    
+    static func == (lhs: Tweet, rhs: Tweet) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(caption)
+        hasher.combine(timestamp)
+        hasher.combine(uid)
+    }
 }

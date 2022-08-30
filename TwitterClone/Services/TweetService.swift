@@ -109,27 +109,26 @@ extension TweetService {
     }
     
     func fetchLikedTweets(forUid uid: String, completion: @escaping([Tweet]) -> Void) {
-        var tweets = [Tweet]()
+        var tweets = Set<Tweet>()
         
         Firestore.firestore().collection("users")
             .document(uid)
             .collection("user-likes")
-            .getDocuments { snapshot, _ in
-                guard let documents = snapshot?.documents else { return }
-                
+            .addSnapshotListener { snapshot, _ in
+                guard let documents = snapshot?.documents else  { return }
+
                 documents.forEach { doc in
                     let tweetId = doc.documentID
-                    
+
                     Firestore.firestore().collection("tweets")
                         .document(tweetId)
                         .getDocument { snapshot, _ in
                             guard let tweet = try? snapshot?.data(as: Tweet.self) else { return }
-                            
-                            tweets.append(tweet)
-                            completion(tweets)
+
+                            tweets.insert(tweet)
+                            completion(Array(tweets).sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() }))
                         }
                 }
-                
             }
     }
     
@@ -187,24 +186,24 @@ extension TweetService {
     }
     
     func fetchSavedTweets(forUid uid: String, completion: @escaping([Tweet]) -> Void) {
-        var tweets = [Tweet]()
+        var tweets = Set<Tweet>()
         
         Firestore.firestore().collection("users")
             .document(uid)
             .collection("user-saved")
-            .getDocuments { snapshot, _ in
-                guard let documents = snapshot?.documents else { return }
-                
+            .addSnapshotListener { snapshot, _ in
+                guard let documents = snapshot?.documents else  { return }
+
                 documents.forEach { doc in
                     let tweetId = doc.documentID
-                    
+
                     Firestore.firestore().collection("tweets")
                         .document(tweetId)
                         .getDocument { snapshot, _ in
                             guard let tweet = try? snapshot?.data(as: Tweet.self) else { return }
-                            
-                            tweets.append(tweet)
-                            completion(tweets)
+
+                            tweets.insert(tweet)
+                            completion(Array(tweets).sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() }))
                         }
                 }
             }
